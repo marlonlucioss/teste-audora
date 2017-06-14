@@ -9,6 +9,7 @@
   padding: 20px;
   display: flex;
   flex-flow: row wrap;
+  background-color: #d4d4d4;
 
   md-card {
     width: 30%;
@@ -49,6 +50,11 @@
       }
     }
     .appointment-table{
+      .md-body{
+        tr{
+          background-color: white;
+        }
+      }
       .time-cell{
         font-size: 22px;
       }

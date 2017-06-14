@@ -23,10 +23,10 @@
           <h3 class="appointment-item-header-date">{{main.convertDate(appointment.date)}}</h3>
         </header>
         <!-- exact table from live demo -->
-        <md-table-container ng-repeat="a in appointment.appointments">
+        <md-table-container>
           <table class="appointment-table" md-table multiple ng-model="main.rowselected" md-progress="promise">
             <tbody md-body>
-            <tr md-row md-select="dessert" md-select-id="name" md-auto-select>
+            <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="a in appointment.appointments">
               <td md-cell class="time-cell">{{a.time}}</td>
               <td md-cell class="days-cell">
                 <label class="time" ng-if="!a.confirmed" ng-class="{'single' : main.checkDiffDays(appointment.date).indexOf('Hoje') != -1, 'dias' : main.checkDiffDays(appointment.date).indexOf('dias') != -1, 'meses' : main.checkDiffDays(appointment.date).indexOf('meses') != -1, 'mes' : main.checkDiffDays(appointment.date).indexOf('mês') != -1}">{{::main.checkDiffDays(appointment.date)}}</label>
