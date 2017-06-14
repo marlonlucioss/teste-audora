@@ -1,0 +1,187 @@
+/**
+ *  Do not remove the comment below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.appointment-content {
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+
+  md-card {
+    width: 30%;
+
+    img.pull-right {
+      float: right;
+      width: 100px;
+    }
+  }
+  .appointment-item{
+    margin-bottom: 70px;
+    header{
+      .appointment-item-header-weekday{
+        text-align: center;
+        display: inline-flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        label{
+          text-transform: uppercase;
+        }
+        i{
+          font-size: 17px;
+          color: #177fb3;
+        }
+        .md-button.md-icon-button{
+          margin-top: 9px;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+          width: 25px;
+        }
+      }
+      .appointment-item-header-date{
+        text-align: center;
+        font-size: 11px;
+        margin-top: -10px;
+      }
+    }
+    .appointment-table{
+      .time-cell{
+        font-size: 22px;
+      }
+      .days-cell{
+        padding-right: 0 !important;
+        padding-left: 35px !important;
+        width: 140px;
+        label{
+          &.time{
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #bb9140;
+            color: white;
+            &.single{
+              background-color: black;
+            }
+            &.dia{
+              background-color: #656d24;
+            }
+            &.dias{
+              background-color: #396847;
+            }
+            &.mes{
+              background-color: #9d2e45;
+            }
+            &.meses{
+              background-color: #527cff;
+            }
+          }
+          &.confirmed{
+            i{
+              color: green;
+              font-size: 40px;
+              padding-left: 10px;
+              padding-right: 4px;
+            }
+          }
+        }
+
+      }
+      .titles{
+        .requester{
+          margin: 0;
+          line-height: 20px;
+        }
+        .desc{
+          margin: 0;
+          line-height: 20px;
+        }
+      }
+      .avatar{
+        float: left;
+        img{
+          margin-top: 17px;
+          margin-bottom: 0;
+        }
+      }
+      .person{
+        float: left;
+        margin-top: 17px;
+      }
+      .actions{
+        .md-icon-button{
+          padding: 0;
+          margin: 0 2px;
+          padding-top: 15px;
+          width: 15px;
+          height: 15px;
+          color: #888888;
+          &.disabled{
+            color: #bcbcbc;
+          }
+          i{
+            font-size: 15px;
+          }
+          &:hover{
+            color: #4f4f4f;
+          }
+        }
+      }
+      .vAccordion--default v-pane-header::after, .vAccordion--default v-pane-header::before{
+        content: none;
+      }
+      v-pane-header{
+        margin: 0;
+        border-bottom: 0;
+        padding: 0;
+        md-list{
+          padding: 0;
+        }
+      }
+      a.md-button.md-default-theme:not([disabled]):hover, a.md-button:not([disabled]):hover, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover{
+        background-color: transparent;
+      }
+      .vAccordion--default v-pane-header:hover, .vAccordion--default v-pane-header:focus{
+        color: initial;
+      }
+      v-pane-content{
+        .pane-content{
+          padding: 20px;
+          background-color: #f3f3f3;
+          .pane-content-item{
+            margin-bottom: 6px;
+          }
+          .appointment-key{
+            font-size: 11px;
+            text-align: right;
+            padding-right: 10px;
+            border-right: 1px solid gray;
+            text-transform: uppercase;
+          }
+          .appointment-value{
+            font-size: 11px;
+            padding-left: 10px;
+            font-weight: 600;
+            &.highlight{
+              color: #177fb3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+md-tooltip.md-default-theme .md-content, md-tooltip .md-content {
+  background-color: #000000;
+}
+
+/**
+ *  Do not remove the comment below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

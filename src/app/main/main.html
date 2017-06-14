@@ -1,0 +1,133 @@
+<div layout="row" layout-xs="column">
+
+  <md-content flex="100">
+
+    <header>
+      <main-navbar></main-navbar>
+    </header>
+
+    <div class="appointment-content">
+
+
+
+
+      <div class="appointment-item" flex="100" ng-repeat="appointment in main.appointments">
+        <header class="appointment-item-header">
+          <div class="appointment-item-header-weekday">
+            <label class="weekday" ng-bind="main.getWeekDay(appointment.date)"></label>
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-tooltip md-direction="bottom">Novo</md-tooltip>
+              <i class="material-icons md-48">add</i>
+            </md-button>
+          </div>
+          <h3 class="appointment-item-header-date">{{main.convertDate(appointment.date)}}</h3>
+        </header>
+        <!-- exact table from live demo -->
+        <md-table-container ng-repeat="a in appointment.appointments">
+          <table class="appointment-table" md-table multiple ng-model="main.rowselected" md-progress="promise">
+            <tbody md-body>
+            <tr md-row md-select="dessert" md-select-id="name" md-auto-select>
+              <td md-cell class="time-cell">{{a.time}}</td>
+              <td md-cell class="days-cell">
+                <label class="time" ng-if="!a.confirmed" ng-class="{'single' : main.checkDiffDays(appointment.date).indexOf('Hoje') != -1, 'dias' : main.checkDiffDays(appointment.date).indexOf('dias') != -1, 'meses' : main.checkDiffDays(appointment.date).indexOf('meses') != -1, 'mes' : main.checkDiffDays(appointment.date).indexOf('mês') != -1}">{{::main.checkDiffDays(appointment.date)}}</label>
+                <label ng-if="a.confirmed" class="confirmed">
+                  <i class="material-icons">check</i>
+                </label>
+              </td>
+              <td md-cell>
+                <v-accordion class="vAccordion--default">
+                  <v-pane>
+                    <v-pane-header>
+                      <md-list>
+                        <md-list-item ng-click="goToPerson(person.name, $event)" class="noright">
+                          <div class="row" flex="50">
+                            <div class="titles" layout-align="left center">
+                              <div class="md-list-item-text">
+                                <p class="requester">{{a.requester}}</p>
+                                <h3 class="desc">
+                                  {{a.desc}}
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row" flex="40">
+                            <div  class="avatar" flex="20">
+                              <img ng-src="{{a.avatar}}" class="md-avatar" />
+                            </div>
+                            <div class="person" flex="80">
+                              <label>{{a.person}}</label>
+                            </div>
+                          </div>
+                          <span flex> </span>
+                          <div class="actions" class="row" flex="10">
+                            <md-button class="md-icon-button" aria-label="Settings" ng-disabled="!a.open">
+                              <i class="material-icons">folder_open</i>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="Favorite" ng-disabled="a.done">
+                              <i class="material-icons">check</i>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="More">
+                              <i class="material-icons md-48">mode_edit</i>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="More">
+                              <i class="material-icons">cancel</i>
+                            </md-button>
+                          </div>
+                        </md-list-item>
+                      </md-list>
+                    </v-pane-header>
+                    <v-pane-content>
+                      <div class="pane-content">
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>ID</label>
+                          <div class="appointment-value highlight" flex="80">{{a.id}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Processo</label>
+                          <div class="appointment-value highlight" flex="80">{{a.cause}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Objeto</label>
+                          <div class="appointment-value" flex="80">{{a.object}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Parte Contrária</label>
+                          <div class="appointment-value" flex="80">{{a.against}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Instância Atual</label>
+                          <div class="appointment-value" flex="80">{{a.local}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Tipo de Intimação</label>
+                          <div class="appointment-value" flex="80">{{a.type}}</div>
+                        </div>
+                        <div class="pane-content-item" layout="row">
+                          <label class="appointment-key" flex>Data de Intimação</label>
+                          <div class="appointment-value" flex="80">{{::main.convertDate(a.date)}}</div>
+                        </div>
+                      </div>
+                    </v-pane-content>
+                  </v-pane>
+                </v-accordion>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </md-content>
+
+</div>

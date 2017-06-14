@@ -1,0 +1,56 @@
+.main-navbar{
+  height: 40px;
+  min-height: initial;
+  background-color: #0f91cf !important;
+  a.md-button{
+    color: #ffffff;
+    border-radius: 0;
+    i{
+      font-size: 22px;
+    }
+    &:hover{
+      background-color: #0d7fb5 !important;
+    }
+  }
+  md-input-container{
+    margin-top: 11px;
+    margin-left: 18px;
+    md-select{
+      md-select-value{
+        border: 0;
+        font-size: 12px;
+      }
+    }
+  }
+  md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value{
+    color: #ffffff;
+    border: 0;
+  }
+}
+
+.md-select-menu-container{
+  md-option{
+    .md-text{
+      font-size: 12px;
+    }
+    &:hover{
+      background-color: #ececec;
+    }
+  }
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1.25em;
+}
+
+a:hover, a:focus {
+  color: greenyellow;
+}
+
+

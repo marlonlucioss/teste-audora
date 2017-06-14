@@ -1,0 +1,37 @@
+<md-toolbar layout="row" class="main-navbar" layout-align="center center">
+  <section flex layout="row" layout-align="left center">
+    <md-button href="#" class="md-icon-button">
+      <md-tooltip md-direction="bottom">Hoje</md-tooltip>
+      <i class="material-icons md-48">refresh</i>
+    </md-button>
+    <md-button href="#" class="md-icon-button">
+      <md-tooltip md-direction="bottom">Buscar</md-tooltip>
+      <i class="material-icons md-48">search</i>
+    </md-button>
+    <md-button href="#" class="md-icon-button">
+      <md-tooltip md-direction="bottom">Imprimir</md-tooltip>
+      <i class="material-icons md-48">print</i>
+    </md-button>
+    <md-button href="#" class="md-icon-button">
+      <md-tooltip md-direction="bottom">Calendário</md-tooltip>
+      <i class="material-icons md-48">today</i>
+    </md-button>
+    <md-button href="#" class="md-icon-button">
+      <md-tooltip md-direction="bottom">Novo</md-tooltip>
+      <i class="material-icons md-48">add</i>
+    </md-button>
+  </section>
+  <section flex layout="row" layout-align="right center">
+    <span flex> </span>
+    <md-input-container>
+      <md-select ng-model="vm.selectedPlace" aria-label="Select Place">
+        <md-option ng-value="place.code" ng-repeat="place in vm.places" ng-selected="place.code == 'mcz'">{{ place.name }}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container>
+      <md-select ng-model="vm.selectedCategory" aria-label="Select Category">
+        <md-option ng-value="category.code" ng-repeat="category in vm.categories" ng-selected="category.code == 'all'">{{ category.name }}</md-option>
+      </md-select>
+    </md-input-container>
+  </section>
+</md-toolbar>
